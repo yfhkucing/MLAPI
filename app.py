@@ -1,6 +1,6 @@
 from optparse import Values
 from urllib import request
-from flask import Flask
+from flask import Flask,request
 import joblib
 import json
 import pandas as pd
