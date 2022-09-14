@@ -14,13 +14,13 @@ model = joblib.load("randomforest_joblib.pkl")
 
 def predict():
     event = json.loads(request.data)
-    values = event['Values']
+    values = event['values']
     values = list(map(np.float,values))
     pre = np.array(values)
     pre = pre.reshape(1,-1)
     res = model.predict(pre)
     print(res)
-    return "1"
+    return str(res[0])
 
 if __name__=='__main__':
     app.run(debug=True)
